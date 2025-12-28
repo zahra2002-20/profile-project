@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import "./App.css";
+import avatarImage from "./assets/avatar.png";
+import profilePage from "./components/profilePage";
 function App() {
-  const [count, setCount] = useState(0)
+  const user = {
+    name: "Zahra Mehmandoust",
+    username: "@zahra-2003-m",
+    avatarImage: avatarImage,
+    streakDays: 2,
+    longestStreak: 2,
+    recentBadesText: "No badges yet.",
+
+    personalInfo: {
+      Email: "zahramehmandoust02@gmail.com",
+      Gender: "Female",
+      Country: "Afghanistan",
+      "Province or State": "Herat",
+      "Teaching Expreiance": "3",
+      "Date of Birth": "2003/10/25",
+      "Online Portfolio Link": "N/A",
+      "Linkedin Link": "Open the Link",
+      Languages: "Farsi, English",
+      Bio: "Computer Teacher",
+    },
+
+    accountDetails: {
+      Role: "Mentor",
+      Status: "Active",
+      Verification: "verified",
+    },
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="page">
+      <profilePage user={user}></profilePage>
+    </div>
+  );
 }
-
-export default App
+export default App;
