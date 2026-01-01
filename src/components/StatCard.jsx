@@ -1,11 +1,19 @@
-export default function StateCard({ title, bigValue, footerText, icon }) {
-  <div className="card statCard">
-    <div className="statTop">
-      <p className="statTitle">{title}</p>
-      {icon ? <span className="statIcon">{icon}</span> : null}
-    </div>
-    {bigValue ? <span className="statValue">{bigValue}</span> : null}
+export default function StatCard ({title, bigValue, footerText, icon}){
+    return (
+        <div className="card statCard">
+            <div className="statTop">
+                <p className="statTitle">
+                    {title}
+                </p>
 
-    <p className="statFooter">{footerText}</p>
-  </div>;
+                {icon ? <span className="statIcon">{icon}</span> : null}
+            </div>
+
+            {bigValue ? <span className="statValue">{bigValue}</span> : null}
+
+            <p className="statFooter">
+                {footerText}
+            </p>
+        </div>
+    )
 }
